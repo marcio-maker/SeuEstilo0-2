@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleMatch - Consultoria de Estilo Pessoal</title>
+    <meta name="description" content="Descubra seu estilo ideal com nosso questionário de visagismo personalizado">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo-container">
+                <i class="fas fa-cut logo-icon"></i>
+                <h1>SeuEstilo</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="/">Home</a>
+                <a href="/blog">Blog</a>
+                <a href="/premium">Premium</a>
+                <!-- Replace this block with server-side rendering or JavaScript logic -->
+                <a href="/login">Login</a>
+                <a href="/register" class="btn-register">Registrar</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h2>Descubra seu estilo ideal</h2>
+                    <p>Questionário de visagismo personalizado baseado no método Hallawell</p>
+                    <a href="#questionario" class="btn btn-primary">Começar Agora</a>
+                </div>
+                
+            </section>
+
+            <section class="blog-preview">
+                <h3>Artigos Recentes</h3>
+                <div class="articles-grid">
+                    {% for article in articles %}
+                    <div class="article-card">
+                        <h4>{{ article.title }}</h4>
+                        <p>{{ article.description }}</p>
+                        <a href="{{ article.url }}" class="btn btn-small">Ler mais</a>
+                    </div>
+                    {% endfor %}
+                </div>
+                </section>
+                
+                <section id="questionario" class="question-container">
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                        <span class="progress-text" id="progressText">Pergunta 1 de 8</span>
+                    </div>
+                    <div class="question-content" id="questionContent">
+                        
+        <!-- Conteúdo Principal -->
+        <main class="question-container" id="questionContainer">
+            <!-- As perguntas serão inseridas aqui dinamicamente via JavaScript -->
+        </main>
+
+       
+                        <!-- As perguntas serão inseridas aqui via JavaScript -->
+                    </div>
+                    <div class="question-navigation">
+                        <button class="btn btn-secondary" id="btnBack" disabled>Voltar</button>
+                        <button class="btn btn-primary" id="btnNext" disabled>Próximo</button>
+                    </div>
+                </section>
+        </main>
+
+        <div class="modal" id="resultsModal">
+            <div class="modal-content">
+                <span class="close-modal" id="closeModal">&times;</span>
+                <h2>Seu Perfil de Estilo</h2>
+                <div class="results-content" id="resultsContent"></div>
+                <div class="premium-upsell">
+                    <h3>Quer mais detalhes?</h3>
+                    <p>Obtenha seu relatório completo em PDF com recomendações personalizadas!</p>
+                    <a href="/premium" class="btn btn-accent">Assinar Premium</a>
+                </div>
+                <button class="btn btn-primary" id="btnRestart">Refazer Questionário</button>
+            </div>
+        </div>
+
+        <footer class="contact-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/premium">Premium</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li>Email: hairbymarcio@gmail.com</li>
+                        <li>Telefone: (11) 914809693</li>
+                        <li>Instagram: <a href="https://instagram.com/hairbymarcio" target="_blank">@hairbymarcio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Seu melhor email" required>
+                        <button type="submit" class="btn btn-small">Assinar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MarcioMaker. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="style.js"></script>
+</body>
+</html>
